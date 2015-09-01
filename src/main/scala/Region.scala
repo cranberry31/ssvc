@@ -5,9 +5,9 @@ case class Region(a: Long, b: Breakend, fromOverlap: Boolean = false, chr: Strin
 	
 	@inline def dist(x: Long, y: Long) = abs(x-y)
 
-	@inline def isOverlap(i: Region) = chr == b.chr && b.orientation == i.b.orientation && dist(a, i.a) <= maxbp && dist(b.end, i.b.end) <= maxbp
+	def isOverlap(i: Region) = chr == b.chr && b.orientation == i.b.orientation && dist(a, i.a) <= maxbp && dist(b.end, i.b.end) <= maxbp
 
-	@inline def maxDist(i: Region) = max(dist(a, i.a), dist(b.end, i.b.end))
+	def maxDist(i: Region) = max(dist(a, i.a), dist(b.end, i.b.end))
 	
 	def overlap(i: Region) = this.copy(fromOverlap = true, bpDist = maxDist(i), files = files ++ i.files)
 
