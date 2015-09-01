@@ -19,7 +19,7 @@ package object utils {
 
 	def getOpts(args: Array[String]) = new ScallopConf(args) {
 	    
-	    banner("""svComp - Structural Variant Comparator""")
+	    banner("""svComp - Structural Variant Comparator v0.1""")
 
 	    val vcf = opt[List[String]]("vcf", required = true, noshort = true, descr = "VCF files and folders.")
 	    val chr = opt[String]("chr", required = true, noshort = true, descr = "Chromosome of interest.")
@@ -28,7 +28,6 @@ package object utils {
 
 	    val overlap = toggle("overlap", prefix = "no-", default = Some(true), noshort = true, descrYes = "Infer overlapping regions.", descrNo = "Infer non overlapping regions.")    	    
 
-	    val version = opt[Boolean]("version", noshort = true, descr = "Print version.")
 	    val help = opt[Boolean]("help", noshort = true, descr = "Show this message.")
 	}
 
