@@ -5,5 +5,5 @@ Find common intervals defined by structural variants in a collection of VCF file
 Run sbt from command line, then
 ```sbt
 > update 
-> run --help.
+> run --help
 ```
