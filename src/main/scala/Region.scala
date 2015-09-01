@@ -3,7 +3,7 @@ package ssvc
 case class Region(a: Long, b: Breakend, fromOverlap: Boolean = false, chr: String = "", svType: String = "", maxbp: Long = 0, bpDist: Long = 0, origLine: String, files: Set[String] = Set.empty) {
 	import utils._
 	
-	@inline def dist(x: Long, y: Long) = abs(x-y)
+	def dist(x: Long, y: Long) = abs(x-y)
 
 	def isOverlap(i: Region) = chr == b.chr && b.orientation == i.b.orientation && dist(a, i.a) <= maxbp && dist(b.end, i.b.end) <= maxbp
 
