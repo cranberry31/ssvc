@@ -4,7 +4,7 @@ version := "1.0"
 
 scalaVersion := "2.11.7"
 
-scalacOptions ++= Seq("-optimise", "-feature", "-unchecked", "-deprecation", "-Xlint")
+scalacOptions ++= Seq("-optimise", "-feature", "-unchecked", "-deprecation", "-Xlint", "-Yinline-warnings")
 
 libraryDependencies += "org.rogach" %% "scallop" % "0.9.5"
 
