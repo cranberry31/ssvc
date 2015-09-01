@@ -42,17 +42,15 @@ object VCFParser {
     val svLines = chrLines.filter(_.contains("SVTYPE="+svType.toUpper))
   
     val regions = 
-    	for { line <- svLines
-    		  items = line.split("\t")
-    		  info = items.last.split(";")
-    		} 
-    	yield {
-    		val pos = items(1).toLong
-    
-    		val b = if (svType == "BND") BND(items(4)) else EndPos(chr, pos, info)
-    
-    		Region(a=pos, b=b, fromOverlap=false, chr=chr, svType=svType.toUpper, maxbp=maxbp, bpDist = 0, origLine = line, files=Set(filesMap(vcfFilename)+":"+chr+":"+pos))
-    	}
+      for { line <- svLines
+            items = line.split("\t")
+            info = items.last.split(";")
+          } 
+      yield {
+        val pos = items(1).toLong
+        val b = if (svType == "BND") BND(items(4)) else EndPos(chr, pos, info)
+        Region(a=pos, b=b, fromOverlap=false, chr=chr, svType=svType.toUpper, maxbp=maxbp, bpDist = 0, origLine = line, files=Set(filesMap(vcfFilename)+":"+chr+":"+pos))
+      }
   
     regions.toArray
   }
