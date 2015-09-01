@@ -1,4 +1,4 @@
-name := """svComp"""
+name := """ssvc"""
 
 version := "1.0"
 
