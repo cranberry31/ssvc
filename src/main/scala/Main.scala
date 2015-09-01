@@ -1,4 +1,4 @@
-package svComp
+package ssvc
 
 import java.io.File
 
