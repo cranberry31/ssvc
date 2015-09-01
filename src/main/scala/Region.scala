@@ -1,4 +1,4 @@
-package svComp
+package ssvc
 
 case class Region(a: Long, b: Breakend, fromOverlap: Boolean = false, chr: String = "", svType: String = "", maxbp: Long = 0, bpDist: Long = 0, origLine: String, files: Set[String] = Set.empty) {
 	import utils._
