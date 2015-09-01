@@ -19,7 +19,7 @@ package object utils {
 
 	def getOpts(args: Array[String]) = new ScallopConf(args) {
 	    
-	    banner("""ssvc - Structural Variant Comparator v0.1""")
+	    banner("""ssvc - Simple Structural Variant Comparator v0.1""")
 
 	    val vcf = opt[List[String]]("vcf", required = true, noshort = true, descr = "VCF files and folders.")
 	    val chr = opt[String]("chr", required = true, noshort = true, descr = "Chromosome of interest.")
