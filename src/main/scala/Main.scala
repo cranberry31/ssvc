@@ -16,7 +16,7 @@ object Main extends App {
   val vcfFiles = opts.vcf().toArray.flatMap { path =>
     val file = new File(path)
       if (file.isDirectory) file.listFiles.filter(_.getAbsolutePath.endsWith("vcf")).map(_.getAbsolutePath)
-  	else Array(file.getAbsolutePath)
+      else Array(file.getAbsolutePath)
   }  
 
   println(s"""##INFO=<ID=MAXBPDIST,Type=Integer,Description="Max bp difference between compared regions start or end breakpoints, 0 means identical breakpoints.">""")
